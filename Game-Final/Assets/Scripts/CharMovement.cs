@@ -6,7 +6,7 @@ public class CharMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // Karakterin hareket hýzý
     public Rigidbody rb;        // Karakterin Rigidbody bileþeni
-
+    public Animator animator;
     private Vector3 movement;   // Hareket vektörü
 
     void Update()
@@ -14,8 +14,15 @@ public class CharMovement : MonoBehaviour
         // Giriþleri al
         float moveX = Input.GetAxis("Horizontal"); // A ve D tuþlarý (sol/sað)
         float moveZ = Input.GetAxis("Vertical");   // W ve S tuþlarý (ileri/geri)
-
-        // Hareket vektörünü karakterin yönüne göre hesapla
+        if (moveX != 0 || moveZ != 0)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+        // Hareket vektörünü karakteri'n yönüne göre hesapla
         movement = transform.right * moveX + transform.forward * moveZ;
     }
 
