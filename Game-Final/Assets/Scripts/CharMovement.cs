@@ -6,8 +6,13 @@ public class CharMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // Karakterin hareket hýzý
     public Rigidbody rb;        // Karakterin Rigidbody bileþeni
-    public Animator animator;
+    private Animator animator;
     private Vector3 movement;   // Hareket vektörü
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {

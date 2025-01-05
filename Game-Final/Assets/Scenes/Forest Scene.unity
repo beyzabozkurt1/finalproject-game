@@ -807,7 +807,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 762933983}
-  animator: {fileID: 1960744264}
 --- !u!1001 &830003388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2665,8 +2664,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960380775}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 270c67421619fd54da15c99d70ba822f, type: 2}
+  m_Avatar: {fileID: 9000000, guid: c07955034805f164bb8dae82fa561fe5, type: 3}
+  m_Controller: {fileID: 9100000, guid: ad731c1cf2f08d44cb217774b4d510f4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
