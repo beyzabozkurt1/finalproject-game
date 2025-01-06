@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     float x;
     float y;
-    float speed = 5f;
-    float walkSpeed = 5f;
-    float runSpeed = 10f;
+    float speed = 3f;
+    float walkSpeed = 3f;
+    float runSpeed = 5f;
     private Animator animator;
 
     private bool canAttack = true;
