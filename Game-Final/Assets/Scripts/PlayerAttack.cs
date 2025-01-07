@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public GameManagerPlayer gameManager;
+
     public bool canAttack = true;
     private Animator animator;
 
@@ -17,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
     }
     private void Update()
     {
+        if (gameManager.puzzleContinue) return;
+
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();

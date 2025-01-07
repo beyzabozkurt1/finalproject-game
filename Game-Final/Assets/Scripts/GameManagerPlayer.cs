@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerPlayer : MonoBehaviour
 {
     public bool gameContinue;
     public bool enemyKilled;
+    public bool puzzleContinue;
     public Enemy enemy;
     public CameraControl camControl;
+    public GameManager gameManagerPuzzle;
+    public Camera puzzleCamera;
 
     public ParticleSystem finishEffect;
 
@@ -29,5 +33,20 @@ public class GameManagerPlayer : MonoBehaviour
         enemyKilled = true;
         camControl.StartOrbit();
         finishEffect.Play();
+    }
+
+    public void StartPuzzle()
+    {
+        puzzleContinue = true;
+        puzzleCamera.gameObject.SetActive(true);
+        SceneManager.LoadScene("Puzzle Scene");
+    }
+
+    public void FinishPuzzle()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        puzzleCamera.gameObject.SetActive(false);
+        puzzleContinue=false;
     }
 }

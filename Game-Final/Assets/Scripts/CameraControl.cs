@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    public GameManagerPlayer gameManager;
+
     private float sensibility = 3f;
     private float softness = 0f;
     private float maxVerticalAngle = 35f;
@@ -46,6 +48,7 @@ public class CameraControl : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.puzzleContinue) return;
         if (isOrbiting)
         {
             return;

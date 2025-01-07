@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.puzzleContinue) return;
+
+
         if (canMove)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
@@ -64,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(gameManager.enemyKilled && other.gameObject.CompareTag("Puzzle"))
         {
-
+            gameManager.StartPuzzle();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     private int size;
     private bool shuffling = false;
 
+    private bool startOnce = false;
+    private bool started = false;
     // Create the game setup with size x size pieces.
     private void CreateGamePieces(float gapThickness)
     {
@@ -54,21 +57,32 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
+        started = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!started) return;
+
         // Check for completion.
         if (!shuffling && CheckCompletion())
         {
+            if (startOnce)
+            {
+                SceneManager.LoadScene("FinishScene");
+            }
             shuffling = true;
             StartCoroutine(WaitShuffle(0.5f));
+            startOnce = true;
         }
 
         // On click send out ray to see if we click a piece.

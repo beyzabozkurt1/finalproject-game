@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle Scene.unity
     guid: 9647fe21fe9884849a5f502d16f295fb
+  - enabled: 1
+    path: Assets/Scenes/FinishScene.unity
+    guid: 33fb820f48731784193405a3035ce474
   m_configObjects: {}
