@@ -6,8 +6,8 @@ public class CameraControl : MonoBehaviour
 {
     private float sensibility = 3f;
     private float softness = 0f;
-    private float maxVerticalAngle = 5f;
-    private float minVerticalAngle = -17.25f;
+    private float maxVerticalAngle = 35f;
+    private float minVerticalAngle = -30.25f;
 
     private Vector2 switchPosition;
     private Vector2 camPosition;
