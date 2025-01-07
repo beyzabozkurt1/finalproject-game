@@ -22,4 +22,14 @@ public class Magic : MonoBehaviour
             transform.position += direction * speed * Time.deltaTime;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<Enemy>().TakeDamage();
+        }
+    }
+
+
 }

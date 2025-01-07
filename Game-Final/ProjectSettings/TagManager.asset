@@ -6,6 +6,10 @@ TagManager:
   tags:
   - NpcArea
   - Magic
+  - StartFight
+  - Enemy
+  - EnemyWeapon
+  - Puzzle
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

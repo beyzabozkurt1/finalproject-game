@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public bool canMove = true;
+    public GameManagerPlayer gameManager;
 
     void Start()
     {
@@ -53,4 +54,17 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("StartFight"))
+        {
+            Destroy(other.gameObject);
+            gameManager.StartFight();
+        }
+
+        if(gameManager.enemyKilled && other.gameObject.CompareTag("Puzzle"))
+        {
+
+        }
+    }
 }
