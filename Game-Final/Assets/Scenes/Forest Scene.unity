@@ -600,8 +600,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3963,8 +3963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 232055469}
   lines:
-  - "Amca kolay gelsin. Var m\u0131 bir iste\u011Finiz?"
-  - "Seni Allah g\xF6nderdi heralde ye\u011Fenim son zamanlarda \xE7ocuklar\u0131m\u0131z
+  - Amca kolay gelsin. Bir gariplik var gibi. Neler oluyor?
+  - "Seni G\xF6k Tanr\u0131 g\xF6nderdi heralde Y\xFCce Kam, son zamanlarda \xE7ocuklar\u0131m\u0131z
     kayboluyor. Gece vakti, orman\u0131n derinliklerinde garip sesler duyuluyor.
     Hi\xE7 kimse bu sesleri takip etmeye cesaret edemedi. Ama baz\u0131 eski hik\xE2yeler,
     bu kaybolan \xE7ocuklar\u0131n ruhlar\u0131n\u0131n k\xF6t\xFC bir varl\u0131k
