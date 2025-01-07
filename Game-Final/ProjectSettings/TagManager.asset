@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - NpcArea
+  - Magic
   layers:
   - Default
   - TransparentFX
