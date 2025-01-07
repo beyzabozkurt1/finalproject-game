@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     private bool canAttack = true;
+    public static bool canMove = true;
 
     void Start()
     {
@@ -21,32 +22,36 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        if (canMove)
         {
-            animator.SetBool("Walking", true);
-
-
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
-                speed = runSpeed;
+                animator.SetBool("Walking", true);
+
+
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    speed = runSpeed;
+                }
+                else
+                {
+                    speed = walkSpeed;
+                }
             }
             else
             {
-                speed = walkSpeed;
+                animator.SetBool("Walking", false);
             }
+
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
+
+            x *= Time.deltaTime * speed;
+            y *= Time.deltaTime * speed;
+
+            transform.Translate(x, 0f, y);
         }
-        else
-        {
-            animator.SetBool("Walking", false);
-        }
-
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-
-        x *= Time.deltaTime * speed;
-        y *= Time.deltaTime * speed;
-
-        transform.Translate(x, 0f, y);
+       
     }
 
 }
