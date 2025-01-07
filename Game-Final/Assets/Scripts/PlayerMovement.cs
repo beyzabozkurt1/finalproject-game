@@ -9,10 +9,9 @@ public class PlayerMovement : MonoBehaviour
     float speed = 3f;
     float walkSpeed = 3f;
     float runSpeed = 5f;
-    private Animator animator;
+    public Animator animator;
 
-    private bool canAttack = true;
-    public static bool canMove = true;
+    public bool canMove = true;
 
     void Start()
     {

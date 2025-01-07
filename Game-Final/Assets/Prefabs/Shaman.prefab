@@ -864,7 +864,7 @@ Transform:
   m_GameObject: {fileID: 3997855304898155067}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19021015, y: 0.16762878, z: -0.7383691, w: -0.6249254}
-  m_LocalPosition: {x: -0.057233952, y: 0.13716346, z: 0.015241492}
+  m_LocalPosition: {x: -0.48677632, y: 0.05579316, z: -0.22739719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1734,10 +1734,11 @@ Transform:
   m_GameObject: {fileID: 6356334074606546130}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000014603138, y: 1.702, z: 0.5}
+  m_LocalPosition: {x: -0, y: 1.669, z: 0.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1344560715891739385}
   m_Father: {fileID: 5331460668001437361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7393525835582550126
@@ -1868,6 +1869,8 @@ GameObject:
   - component: {fileID: 3297530485189632326}
   - component: {fileID: 7831328768560724260}
   - component: {fileID: 7915203511699573380}
+  - component: {fileID: 3352748367719454991}
+  - component: {fileID: 220949709025548741}
   m_Layer: 0
   m_Name: Shaman
   m_TagString: Untagged
@@ -1883,9 +1886,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6707141179371882904}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 64.43398, y: 1.591, z: 60.494686}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8127028778789873194}
@@ -1906,7 +1909,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 052de5d86504b70479dffa102fb35e25, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1962,8 +1965,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
 --- !u!114 &7915203511699573380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,6 +1979,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a731a4597a19c45be7021840fa6d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3352748367719454991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707141179371882904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0d2d5063131a14eb5b0f1580583132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 0}
+  lines:
+  - Amca kolay gelsin. Bir gariplik var gibi. Neler oluyor?
+  - "Seni G\xF6k Tanr\u0131 g\xF6nderdi heralde Y\xFCce Kam, son zamanlarda \xE7ocuklar\u0131m\u0131z
+    kayboluyor. Gece vakti, orman\u0131n derinliklerinde garip sesler duyuluyor.
+    Hi\xE7 kimse bu sesleri takip etmeye cesaret edemedi. Ama baz\u0131 eski hik\xE2yeler,
+    bu kaybolan \xE7ocuklar\u0131n ruhlar\u0131n\u0131n k\xF6t\xFC bir varl\u0131k
+    taraf\u0131ndan \xE7al\u0131nd\u0131\u011F\u0131n\u0131 s\xF6yl\xFCyor."
+  - "\xC7ocuklar\u0131 kurtaraca\u011F\u0131m amca sen hi\xE7 merak etme!"
+  textSpeed: 0
+  dialoguePanel: {fileID: 0}
+--- !u!114 &220949709025548741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707141179371882904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63142ffe8892ba844919e724764371bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magic: {fileID: 6983154956400463707, guid: 700575051d20177448071e5873f1ea6c, type: 3}
+  magicSpawnPoint: {fileID: 1344560715891739385}
+  magicSpeed: 10
 --- !u!1 &6775403008415593983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2112,37 @@ Transform:
   m_Children:
   - {fileID: 4603465901272241150}
   m_Father: {fileID: 7688664943745681147}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7166790004104517833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344560715891739385}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1344560715891739385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166790004104517833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00000011920929, y: 0, z: 1.0000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8127028778789873194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7251548612129982030
 GameObject:

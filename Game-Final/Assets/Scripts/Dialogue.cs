@@ -8,6 +8,8 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed = 0.05f;
     public GameObject dialoguePanel;
+    public PlayerMovement playerMovement;
+    public PlayerAttack playerAttack;
 
     private int index = 0;
 
@@ -26,10 +28,12 @@ public class Dialogue : MonoBehaviour
 
     void StartDialogue()
     {
+        playerMovement.canMove = false;
+        playerAttack.canAttack = false;
+        playerMovement.animator.SetBool("Walking", false);
         dialoguePanel.SetActive(true);
         index = 0;
         textComponent.text = string.Empty;
-        PlayerMovement.canMove = false;
         Cursor.lockState = CursorLockMode.None;
         StartCoroutine(TypeLine());
     }
@@ -60,9 +64,15 @@ public class Dialogue : MonoBehaviour
 
     void EndDialogue()
     {
-        PlayerMovement.canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
         dialoguePanel.SetActive(false);
+        playerMovement.canMove = true;
+        StartCoroutine(SetCanAttack());
+    }
+    private IEnumerator SetCanAttack()
+    {
+        yield return new WaitForSeconds(1);
+        playerAttack.canAttack = true;
     }
 
     private void Update()

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private bool canAttack = true;
-
+    public bool canAttack = true;
     private Animator animator;
+
+    [SerializeField] private GameObject magic;
+    [SerializeField] private Transform magicSpawnPoint;
+    public float magicSpeed = 10f;
 
     private void Start()
     {
@@ -17,7 +20,6 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
-
         }
     }
 
@@ -25,8 +27,21 @@ public class PlayerAttack : MonoBehaviour
     {
         canAttack = false;
         animator.SetBool("Attack", true);
+        InstantiateAndShootMagic();
         StartCoroutine(FinishAnim());
     }
+
+    private void InstantiateAndShootMagic()
+    {
+        GameObject instantiatedMagic = Instantiate(magic, magicSpawnPoint.position, Quaternion.identity);
+
+        Magic magicScript = instantiatedMagic.GetComponent<Magic>();
+        if (magicScript != null)
+        {
+            magicScript.SetDirection(magicSpawnPoint.forward);
+        }
+    }
+
 
     private IEnumerator FinishAnim()
     {

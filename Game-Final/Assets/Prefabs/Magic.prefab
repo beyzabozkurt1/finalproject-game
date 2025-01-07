@@ -1034,7 +1034,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1358,7 +1358,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4900,6 +4900,7 @@ GameObject:
   - component: {fileID: 971249269869243443}
   - component: {fileID: 7726933011459704823}
   - component: {fileID: 6843341800772044932}
+  - component: {fileID: 6266137681990410315}
   m_Layer: 0
   m_Name: Magic
   m_TagString: Magic
@@ -9795,12 +9796,25 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 1.42505
   m_Center: {x: 0, y: 0.98, z: 0}
+--- !u!114 &6266137681990410315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983154956400463707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28599d7d4913764d8cece4422f17c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &8687618019410074149
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,7 +9931,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10835,7 +10849,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -11159,7 +11173,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
