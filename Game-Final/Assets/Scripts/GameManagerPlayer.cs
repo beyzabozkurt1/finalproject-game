@@ -38,7 +38,7 @@ public class GameManagerPlayer : MonoBehaviour
     public void StartPuzzle()
     {
         puzzleContinue = true;
-        puzzleCamera.gameObject.SetActive(true);
+        //puzzleCamera.gameObject.SetActive(true);
         SceneManager.LoadScene("Puzzle Scene");
     }
 
